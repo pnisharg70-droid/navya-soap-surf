@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Admin Orders | Navya Surf & Soap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-body">
+    <header class="site-header">
+      <nav class="nav" aria-label="Admin navigation">
+        <a class="brand" href="index.html" aria-label="Navya Surf & Soap home">
+          <span class="brand-mark">NS</span>
+          <span class="brand-name">Navya Surf & Soap</span>
+        </a>
+        <div class="admin-nav-actions">
+          <a class="btn ghost" href="index.html">Storefront</a>
+          <button class="btn primary hidden" type="button" data-sign-out>Sign out</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-login" data-login-panel>
+        <div>
+          <p class="eyebrow">Admin access</p>
+          <h1>Manage customer orders.</h1>
+          <p>
+            Sign in with the approved admin email to view enquiries, update order status, and
+            prepare deliveries.
+          </p>
+        </div>
+
+        <form class="admin-auth-card" data-auth-form>
+          <label>
+            Admin email
+            <input type="email" name="email" placeholder="pnisharg70@gmail.com" required />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" placeholder="Your Supabase password" required />
+          </label>
+          <div class="auth-actions">
+            <button class="btn primary" type="submit" data-auth-action="signin">Sign in</button>
+            <button class="btn ghost" type="button" data-auth-action="signup">Create admin account</button>
+          </div>
+          <p class="admin-status" data-auth-status role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-dashboard hidden" data-dashboard>
+        <div class="admin-heading">
+          <div>
+            <p class="eyebrow">Order dashboard</p>
+            <h1>Customer enquiries</h1>
+          </div>
+          <button class="btn ghost" type="button" data-refresh-orders>Refresh</button>
+        </div>
+
+        <div class="admin-stats" data-order-stats></div>
+
+        <div class="admin-tools">
+          <label>
+            Filter
+            <select data-status-filter>
+              <option value="all">All orders</option>
+              <option value="new">New</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="packing">Packing</option>
+              <option value="out_for_delivery">Out for delivery</option>
+              <option value="delivered">Delivered</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </label>
+          <label>
+            Search
+            <input type="search" data-order-search placeholder="Name, phone, city, product..." />
+          </label>
+        </div>
+
+        <p class="admin-status" data-order-status role="status"></p>
+        <div class="orders-list" data-orders-list></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

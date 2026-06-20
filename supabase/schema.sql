@@ -9,12 +9,18 @@ create table if not exists public.customer_orders (
   requirement text check (requirement is null or char_length(requirement) <= 1200),
   order_items jsonb not null default '[]'::jsonb check (jsonb_typeof(order_items) = 'array'),
   total_amount numeric(12, 2) not null default 0 check (total_amount >= 0),
-  source text not null default 'surf-soap-india-website' check (source = 'surf-soap-india-website')
+  source text not null default 'surf-soap-india-website' check (source = 'surf-soap-india-website'),
+  status text not null default 'new'
+    check (status in ('new', 'confirmed', 'packing', 'out_for_delivery', 'delivered', 'cancelled')),
+  admin_notes text,
+  delivered_at timestamptz,
+  updated_at timestamptz not null default now()
 );
 
 alter table public.customer_orders enable row level security;
 
 grant insert on public.customer_orders to anon;
+grant select, update on public.customer_orders to authenticated;
 grant usage, select on sequence public.customer_orders_id_seq to anon;
 
 drop policy if exists "Anyone can create customer orders" on public.customer_orders;
@@ -27,3 +33,44 @@ create policy "Anyone can create customer orders"
     and total_amount >= 0
     and jsonb_typeof(order_items) = 'array'
   );
+
+create or replace function public.set_customer_orders_updated_at()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+begin
+  new.updated_at = now();
+  if new.status = 'delivered' and old.status is distinct from 'delivered' and new.delivered_at is null then
+    new.delivered_at = now();
+  end if;
+  if new.status is distinct from 'delivered' then
+    new.delivered_at = null;
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists set_customer_orders_updated_at on public.customer_orders;
+create trigger set_customer_orders_updated_at
+  before update on public.customer_orders
+  for each row
+  execute function public.set_customer_orders_updated_at();
+
+drop policy if exists "Admin can read customer orders" on public.customer_orders;
+create policy "Admin can read customer orders"
+  on public.customer_orders
+  for select
+  to authenticated
+  using (((select auth.jwt()) ->> 'email') = 'pnisharg70@gmail.com');
+
+drop policy if exists "Admin can update customer orders" on public.customer_orders;
+create policy "Admin can update customer orders"
+  on public.customer_orders
+  for update
+  to authenticated
+  using (((select auth.jwt()) ->> 'email') = 'pnisharg70@gmail.com')
+  with check (((select auth.jwt()) ->> 'email') = 'pnisharg70@gmail.com');
+
+create index if not exists customer_orders_status_created_at_idx
+  on public.customer_orders (status, created_at desc);

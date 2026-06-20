@@ -1,71 +1,107 @@
 const products = [
   {
-    id: "surf-fresh-500g",
+    id: "surf-excel-500g",
     name: "Surf Excel Easy Wash 500 g",
     category: "surf",
     price: 79,
-    description: "Surf Excel detergent powder for regular clothes, uniforms, and towels.",
+    description: "Detergent powder for daily clothing, uniforms, towels, and regular bucket wash.",
     tags: ["Daily wash", "Fresh fragrance"],
     image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER500G.jpg?v=1746444676&width=900",
   },
   {
-    id: "surf-fresh-1kg",
+    id: "surf-excel-1kg",
     name: "Surf Excel Easy Wash 1 kg",
     category: "surf",
     price: 149,
-    description: "Value pack for clean everyday laundry with a bright, fresh finish.",
-    tags: ["Family pack", "Bucket wash"],
+    description: "Family-size detergent powder for cleaner, brighter everyday laundry loads.",
+    tags: ["Family pack", "Value size"],
     image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER1KKG.webp?v=1746444719&width=900",
   },
   {
-    id: "surf-fresh-5kg",
-    name: "Surf Excel Easy Wash 5 kg Saver",
+    id: "surf-excel-5kg",
+    name: "Surf Excel 5 kg Saver Pack",
     category: "surf",
     price: 649,
-    description: "Large pack for families, hostels, shared homes, and repeat laundry use.",
-    tags: ["Saver pack", "High value"],
+    description: "Large detergent powder pack for families, hostels, offices, and repeat use.",
+    tags: ["Bulk value", "High use"],
     image: "https://fmcghouse.com/cdn/shop/files/Untitled_f200b3c4-4efb-4118-9119-6fde0e2166d6.png?v=1754395682&width=900",
   },
   {
-    id: "blue-washing-soap",
+    id: "detergent-bar-150g",
     name: "Surf Excel Detergent Bar 150 g",
     category: "washing-soap",
     price: 45,
-    description: "Surf Excel detergent bar for collars, cuffs, socks, and hand-wash stains.",
-    tags: ["Laundry bar", "Stain rub"],
+    description: "Laundry bar for collars, cuffs, socks, hand washing, and stain rubbing.",
+    tags: ["Laundry bar", "Stain care"],
     image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTBAR150G.webp?v=1746441457&width=900",
   },
   {
-    id: "white-washing-soap-pack",
-    name: "Surf Excel Detergent Bar Pack of 4",
+    id: "detergent-bar-pack",
+    name: "Surf Excel Bar Pack of 4",
     category: "washing-soap",
     price: 169,
-    description: "Multipack Surf Excel bars for daily laundry and household cloth cleaning.",
+    description: "Multi-pack detergent bars for homes that wash clothes by hand regularly.",
     tags: ["Pack of 4", "Home care"],
     image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTBAR4X200G.jpg?v=1746440092&width=900",
   },
   {
+    id: "premium-bath-soap",
+    name: "Premium Bath Soap Trio",
+    category: "bath-soap",
+    price: 135,
+    description: "Gentle everyday bathing soaps with a clean fragrance for family bathrooms.",
+    tags: ["Pack of 3", "Bath care"],
+    image: "assets/premium-bath-soap-trio.jpeg",
+  },
+  {
+    id: "classic-bath-soap",
+    name: "Classic Family Bath Soap",
+    category: "bath-soap",
+    price: 49,
+    description: "Single bath soap bar for daily freshness and simple family use.",
+    tags: ["Daily use", "Fresh feel"],
+    image: "https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "dishwash-bar-pack",
+    name: "Dishwash Bar Pack",
+    category: "dishwash",
+    price: 89,
+    description: "Practical dishwash bars for utensils, lunch boxes, kitchen tools, and pans.",
+    tags: ["Kitchen", "Pack value"],
+    image: "assets/dishwash-bar-pack.jpeg",
+  },
+  {
+    id: "starter-combo",
+    name: "Starter Fresh Combo",
+    category: "combos",
+    price: 299,
+    description: "A compact surf and soap pack for small homes or first-time orders.",
+    tags: ["Starter", "Best trial"],
+    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=900&q=80",
+  },
+  {
     id: "monthly-home-combo",
-    name: "Surf Excel Monthly Combo",
+    name: "Monthly Home Combo",
     category: "combos",
     price: 799,
-    description: "Surf Excel powder and detergent bars in one useful monthly laundry pack.",
+    description: "Detergent powder, washing bars, bath soap, and dishwash bars in one monthly set.",
     tags: ["Best seller", "Monthly pack"],
     image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER1KKG.webp?v=1746444719&width=900",
   },
   {
-    id: "laundry-combo",
-    name: "Surf Excel Laundry Combo",
+    id: "bulk-refill-combo",
+    name: "Bulk Refill Combo",
     category: "combos",
-    price: 399,
-    description: "Surf Excel powder and detergent bar bundle for regular clothes and stain care.",
-    tags: ["Laundry", "Combo"],
-    image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTBAR4X200G.jpg?v=1746440092&width=900",
+    price: 1499,
+    description: "Higher quantity surf and soap bundle for shops, offices, hostels, and large homes.",
+    tags: ["Bulk", "Custom support"],
+    image: "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
-const SUPABASE_URL = "https://olhfskublgjvugmeqarc.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_R5r4TEKgibvhXi3DvJ7TJA_tpyyIz5L";
+const SUPABASE_URL = "https://ifoqkxtxhnlunrozlsoa.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_c6e4NR323YZdH0FwQ796Ag_QaeUsew2";
 const supabaseClient = window.supabase
   ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
   : null;
@@ -224,12 +260,42 @@ scrim.addEventListener("click", closeCart);
 document.querySelector("[data-checkout]").addEventListener("click", (event) => {
   if (!state.cart.size) {
     event.preventDefault();
-    orderStatus.textContent = "Add at least one product before sending an enquiry.";
+    orderStatus.textContent = "You can add products here or fill the enquiry form directly.";
     return;
   }
 
   closeCart();
 });
+
+async function saveOrder(payload) {
+  if (supabaseClient) {
+    const { error } = await supabaseClient
+      .from("customer_orders")
+      .insert(payload);
+
+    if (error) {
+      throw error;
+    }
+
+    return;
+  }
+
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/customer_orders`, {
+    method: "POST",
+    headers: {
+      apikey: SUPABASE_PUBLISHABLE_KEY,
+      Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(message || `Supabase request failed with status ${response.status}`);
+  }
+}
 
 document.querySelector(".contact-form").addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -237,11 +303,6 @@ document.querySelector(".contact-form").addEventListener("submit", async (event)
   const submitButton = form.querySelector("button[type='submit']");
   const formData = new FormData(form);
   const entries = cartEntries();
-
-  if (!entries.length) {
-    alert("Please add at least one surf or soap product before sending your order enquiry.");
-    return;
-  }
 
   const totalAmount = entries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
   const payload = {
@@ -267,18 +328,7 @@ document.querySelector(".contact-form").addEventListener("submit", async (event)
   submitButton.textContent = "Sending...";
 
   try {
-    if (!supabaseClient) {
-      throw new Error("Supabase client is not configured.");
-    }
-
-    const { error } = await supabaseClient
-      .from("customer_orders")
-      .insert(payload);
-
-    if (error) {
-      throw error;
-    }
-
+    await saveOrder(payload);
     form.reset();
     state.cart.clear();
     renderCart();
@@ -304,6 +354,12 @@ navLinks.addEventListener("click", (event) => {
   if (event.target.matches("a")) {
     navLinks.classList.remove("open");
     navToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeCart();
   }
 });
 

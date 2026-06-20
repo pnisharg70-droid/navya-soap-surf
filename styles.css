@@ -1,14 +1,15 @@
 :root {
-  --ink: #1e1b18;
-  --muted: #686059;
-  --paper: #fffaf2;
+  --ink: #101818;
+  --muted: #5e6a6a;
+  --paper: #f6fbfa;
   --panel: #ffffff;
-  --line: #eadfce;
-  --saffron: #d97924;
-  --saffron-dark: #a94d18;
-  --green: #22664f;
-  --maroon: #6e2437;
-  --shadow: 0 20px 60px rgba(52, 31, 17, 0.14);
+  --line: #dcebea;
+  --aqua: #16b8c4;
+  --aqua-dark: #087f8c;
+  --mint: #dff7f1;
+  --leaf: #16856b;
+  --sun: #f4c542;
+  --shadow: 0 22px 58px rgba(10, 62, 67, 0.14);
 }
 
 * {
@@ -48,7 +49,7 @@ textarea {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(30, 27, 24, 0.88);
+  background: rgba(10, 28, 28, 0.9);
   backdrop-filter: blur(18px);
 }
 
@@ -67,19 +68,19 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0;
 }
 
 .brand-mark {
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+  border-radius: 8px;
   display: grid;
   place-items: center;
-  color: #fff;
-  background: linear-gradient(135deg, var(--saffron), var(--maroon));
-  box-shadow: 0 10px 28px rgba(217, 121, 36, 0.28);
+  color: #061515;
+  background: linear-gradient(135deg, #b7fff5, var(--sun));
+  box-shadow: 0 12px 28px rgba(22, 184, 196, 0.25);
 }
 
 .nav-links {
@@ -138,7 +139,7 @@ textarea {
   background: #fff;
   border-radius: 50%;
   font-size: 0.76rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .hero {
@@ -155,7 +156,7 @@ textarea {
   inset: 0;
   z-index: -3;
   background:
-    url("https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1800&q=80")
+    url("https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER1KKG.webp?v=1746444719&width=1800")
     center / cover;
   transform: scale(1.02);
 }
@@ -165,8 +166,8 @@ textarea {
   inset: 0;
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(20, 15, 12, 0.88), rgba(20, 15, 12, 0.46), rgba(20, 15, 12, 0.18)),
-    linear-gradient(0deg, rgba(20, 15, 12, 0.72), rgba(20, 15, 12, 0));
+    linear-gradient(90deg, rgba(7, 21, 21, 0.9), rgba(7, 21, 21, 0.52), rgba(7, 21, 21, 0.18)),
+    linear-gradient(0deg, rgba(7, 21, 21, 0.78), rgba(7, 21, 21, 0));
 }
 
 .hero-content {
@@ -178,7 +179,7 @@ textarea {
 
 .eyebrow {
   margin: 0 0 12px;
-  color: var(--saffron);
+  color: var(--aqua);
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.13em;
@@ -190,19 +191,19 @@ textarea {
 .cart-header h2 {
   margin: 0;
   letter-spacing: 0;
-  line-height: 1.02;
+  line-height: 1.04;
 }
 
 .hero h1 {
-  max-width: 760px;
-  font-size: clamp(3rem, 8vw, 6.8rem);
+  max-width: 850px;
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
 }
 
 .hero-copy {
-  max-width: 680px;
+  max-width: 720px;
   margin: 24px 0 0;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(1rem, 2vw, 1.24rem);
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 2vw, 1.18rem);
 }
 
 .hero-actions {
@@ -221,17 +222,17 @@ textarea {
   border-radius: 8px;
   padding: 13px 18px;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .btn.primary {
-  color: #fff;
-  background: var(--saffron);
-  box-shadow: 0 18px 42px rgba(217, 121, 36, 0.28);
+  color: #061515;
+  background: var(--sun);
+  box-shadow: 0 18px 42px rgba(244, 197, 66, 0.24);
 }
 
 .btn.primary:hover {
-  background: var(--saffron-dark);
+  background: #ffd95f;
 }
 
 .btn.secondary {
@@ -266,7 +267,7 @@ textarea {
 
 .trust-strip strong {
   display: block;
-  color: var(--green);
+  color: var(--aqua-dark);
   font-size: 1.35rem;
 }
 
@@ -289,7 +290,7 @@ textarea {
 }
 
 .section h2 {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.8rem);
 }
 
 .section p {
@@ -303,7 +304,7 @@ textarea {
 
 .section-copy p:last-child,
 .section-heading p:last-child {
-  max-width: 720px;
+  max-width: 740px;
   font-size: 1.05rem;
 }
 
@@ -316,27 +317,30 @@ textarea {
 .service-card,
 .plan-card,
 .process-grid article,
-.menu-card {
+.product-card,
+.industry-grid article {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 10px 30px rgba(52, 31, 17, 0.06);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(10, 62, 67, 0.06);
 }
 
-.service-card {
+.service-card,
+.industry-grid article {
   min-height: 210px;
   padding: 26px;
 }
 
 .service-card span {
-  color: var(--saffron);
+  color: var(--aqua-dark);
   font-weight: 900;
 }
 
 .service-card h3,
 .plan-card h3,
 .process-grid h3,
-.menu-card h3 {
+.product-card h3,
+.industry-grid h3 {
   margin: 18px 0 8px;
 }
 
@@ -344,13 +348,13 @@ textarea {
   margin-bottom: 30px;
 }
 
-.menu-section {
+.products-section {
   width: 100%;
   padding-inline: max(16px, calc((100% - 1180px) / 2));
-  background: #f7efe3;
+  background: linear-gradient(180deg, #edfafa, #f8fffd);
 }
 
-.menu-layout {
+.products-layout {
   display: grid;
   grid-template-columns: 190px 1fr;
   gap: 24px;
@@ -371,56 +375,57 @@ textarea {
   color: var(--ink);
   background: #fff;
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .filter-btn.active,
 .filter-btn:hover {
   color: #fff;
-  background: var(--green);
-  border-color: var(--green);
+  background: var(--aqua-dark);
+  border-color: var(--aqua-dark);
 }
 
-.menu-grid {
+.product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
-.menu-card {
+.product-card {
   overflow: hidden;
 }
 
-.menu-card img {
+.product-card img {
   width: 100%;
-  aspect-ratio: 1.35;
+  aspect-ratio: 1.28;
   display: block;
   object-fit: cover;
+  background: var(--mint);
 }
 
-.menu-card-body {
+.product-card-body {
   padding: 18px;
 }
 
-.menu-card-top {
+.product-card-top {
   display: flex;
   justify-content: space-between;
   gap: 14px;
 }
 
-.menu-card h3 {
+.product-card h3 {
   margin: 0;
   font-size: 1.05rem;
 }
 
-.menu-card p {
-  min-height: 48px;
+.product-card p {
+  min-height: 70px;
   margin: 10px 0 14px;
   font-size: 0.92rem;
 }
 
 .price {
-  color: var(--green);
+  color: var(--leaf);
   font-weight: 900;
   white-space: nowrap;
 }
@@ -434,11 +439,11 @@ textarea {
 
 .tag {
   padding: 5px 8px;
-  color: var(--maroon);
-  background: #f9e7df;
+  color: #075d63;
+  background: var(--mint);
   border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .add-btn {
@@ -453,7 +458,22 @@ textarea {
 }
 
 .add-btn:hover {
-  background: var(--green);
+  background: var(--aqua-dark);
+}
+
+.industries {
+  text-align: center;
+}
+
+.industries .section-heading p:last-child {
+  margin-inline: auto;
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  text-align: left;
 }
 
 .plans {
@@ -477,13 +497,13 @@ textarea {
 
 .plan-card.featured {
   color: #fff;
-  background: var(--green);
-  border-color: var(--green);
+  background: var(--aqua-dark);
+  border-color: var(--aqua-dark);
   transform: translateY(-10px);
 }
 
 .plan-card.featured p {
-  color: rgba(255, 255, 255, 0.74);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .plan-card strong {
@@ -494,7 +514,11 @@ textarea {
 
 .plan-card a {
   font-weight: 900;
-  color: var(--saffron);
+  color: var(--leaf);
+}
+
+.plan-card.featured a {
+  color: var(--sun);
 }
 
 .showcase {
@@ -503,13 +527,13 @@ textarea {
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
   padding: 0;
-  background: var(--ink);
+  background: #0a1c1c;
 }
 
 .showcase-image {
   min-height: 560px;
   background:
-    url("https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=1500&q=80")
+    url("https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTBAR4X200G.jpg?v=1746440092&width=1500")
     center / cover;
 }
 
@@ -519,7 +543,7 @@ textarea {
 }
 
 .showcase-copy p {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.76);
 }
 
 .check-list {
@@ -542,7 +566,7 @@ textarea {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--saffron);
+  background: var(--sun);
 }
 
 .process-grid {
@@ -560,9 +584,9 @@ textarea {
   height: 42px;
   display: grid;
   place-items: center;
-  color: #fff;
-  background: var(--maroon);
-  border-radius: 50%;
+  color: #061515;
+  background: var(--sun);
+  border-radius: 8px;
   font-weight: 900;
 }
 
@@ -577,8 +601,8 @@ textarea {
   padding: 38px;
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 242, 0.88)),
-    url("https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=1200&q=80")
+    linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(237, 250, 250, 0.9)),
+    url("https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER500G.jpg?v=1746444676&width=1200")
     center / cover;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
@@ -593,7 +617,7 @@ textarea {
   display: grid;
   gap: 7px;
   color: var(--ink);
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .contact-form input,
@@ -613,7 +637,7 @@ textarea {
   gap: 30px;
   padding: 42px max(16px, calc((100% - 1180px) / 2));
   color: #fff;
-  background: #161310;
+  background: #0a1c1c;
 }
 
 .footer p {
@@ -662,7 +686,7 @@ textarea {
   height: 42px;
   border-radius: 8px;
   color: var(--ink);
-  background: #f4eadc;
+  background: var(--mint);
   font-size: 1.2rem;
 }
 
@@ -736,8 +760,8 @@ textarea {
 [data-order-status] {
   min-height: 22px;
   margin: 10px 0 0;
-  color: var(--green);
-  font-weight: 800;
+  color: var(--leaf);
+  font-weight: 900;
 }
 
 .scrim {
@@ -765,7 +789,7 @@ textarea {
     align-items: stretch;
     padding: 16px;
     border-radius: 8px;
-    background: #211d19;
+    background: #0a1c1c;
     box-shadow: var(--shadow);
   }
 
@@ -797,7 +821,8 @@ textarea {
 
   .service-grid,
   .plan-grid,
-  .process-grid {
+  .process-grid,
+  .industry-grid {
     grid-template-columns: 1fr;
   }
 
@@ -805,7 +830,7 @@ textarea {
     transform: none;
   }
 
-  .menu-layout {
+  .products-layout {
     grid-template-columns: 1fr;
   }
 
@@ -819,7 +844,7 @@ textarea {
     min-width: 120px;
   }
 
-  .menu-grid {
+  .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -830,7 +855,7 @@ textarea {
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 680px;
+    min-height: 690px;
   }
 
   .hero-content {
@@ -838,7 +863,7 @@ textarea {
   }
 
   .hero h1 {
-    font-size: clamp(2.55rem, 14vw, 4.2rem);
+    font-size: clamp(2.35rem, 13vw, 4rem);
   }
 
   .hero-actions,
@@ -862,8 +887,12 @@ textarea {
     padding: 64px 0;
   }
 
-  .menu-grid {
+  .product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .product-card p {
+    min-height: 0;
   }
 
   .showcase-image {

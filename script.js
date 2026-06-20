@@ -1,116 +1,71 @@
-const menuItems = [
+const products = [
   {
-    id: "executive-thali",
-    name: "Executive North Indian Thali",
-    category: "meals",
-    price: 355,
-    description: "Paneer curry, dal makhani, jeera rice, roti, salad, pickle, and gulab jamun.",
-    tags: ["Veg", "Office favourite"],
-    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "south-meal",
-    name: "South Indian Meal Box",
-    category: "meals",
-    price: 219,
-    description: "Sambar rice, curd rice, poriyal, appalam, chutney, and kesari.",
-    tags: ["Veg", "Comfort"],
-    image: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "biryani",
-    name: "Hyderabadi Dum Biryani",
-    category: "mains",
-    price: 289,
-    description: "Aromatic basmati rice layered with spices, herbs, raita, and salan.",
-    tags: ["Veg or Chicken", "Bulk order"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Hyderabadi_Chicken_Biryani.jpg/800px-Hyderabadi_Chicken_Biryani.jpg",
-  },
-  {
-    id: "paneer-tikka",
-    name: "Paneer Tikka Masala",
-    category: "mains",
-    price: 239,
-    description: "Charred paneer simmered in a rich tomato-cashew gravy.",
-    tags: ["Veg", "Premium"],
-    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "dal-makhani",
-    name: "Slow Cooked Dal Makhani",
-    category: "mains",
-    price: 189,
-    description: "Black lentils cooked overnight with butter, cream, and roasted spices.",
-    tags: ["Veg", "Classic"],
-    image: "https://images.unsplash.com/photo-1626508035297-0cd27c397d67?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "butter-naan",
-    name: "Butter Naan Basket",
-    category: "breads",
-    price: 119,
-    description: "Soft tandoori naans brushed with butter and served warm.",
-    tags: ["Veg", "Serves 2"],
-    image: "https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "millet-roti",
-    name: "Millet Roti Pack",
-    category: "breads",
-    price: 99,
-    description: "Wholesome jowar and bajra rotis for lighter corporate meals.",
-    tags: ["Healthy", "Veg"],
-    image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "gulab-jamun",
-    name: "Gulab Jamun",
-    category: "desserts",
-    price: 89,
-    description: "Warm khoya dumplings in saffron-cardamom syrup.",
-    tags: ["Dessert", "Popular"],
-    image: "https://images.unsplash.com/photo-1605197183305-6d6c18101c07?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "rasmalai",
-    name: "Rasmalai Cup",
-    category: "desserts",
-    price: 119,
-    description: "Soft chenna discs in chilled saffron milk with pistachio.",
-    tags: ["Dessert", "Premium"],
-    image: "https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "masala-chaas",
-    name: "Masala Chaas",
-    category: "drinks",
-    price: 59,
-    description: "Cooling buttermilk with roasted cumin, mint, and rock salt.",
-    tags: ["Drink", "Refreshing"],
-    image: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: "filter-coffee",
-    name: "South Filter Coffee",
-    category: "drinks",
+    id: "surf-fresh-500g",
+    name: "Surf Excel Easy Wash 500 g",
+    category: "surf",
     price: 79,
-    description: "Fresh decoction coffee with milk, served in insulated cups.",
-    tags: ["Drink", "Pantry"],
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=80",
+    description: "Surf Excel detergent powder for regular clothes, uniforms, and towels.",
+    tags: ["Daily wash", "Fresh fragrance"],
+    image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER500G.jpg?v=1746444676&width=900",
   },
   {
-    id: "chaat-box",
-    name: "Mumbai Chaat Box",
-    category: "meals",
-    price: 179,
-    description: "Dahi bhalla, sev puri, chutneys, masala peanuts, and sweet finish.",
-    tags: ["Snack", "Event"],
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+    id: "surf-fresh-1kg",
+    name: "Surf Excel Easy Wash 1 kg",
+    category: "surf",
+    price: 149,
+    description: "Value pack for clean everyday laundry with a bright, fresh finish.",
+    tags: ["Family pack", "Bucket wash"],
+    image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER1KKG.webp?v=1746444719&width=900",
+  },
+  {
+    id: "surf-fresh-5kg",
+    name: "Surf Excel Easy Wash 5 kg Saver",
+    category: "surf",
+    price: 649,
+    description: "Large pack for families, hostels, shared homes, and repeat laundry use.",
+    tags: ["Saver pack", "High value"],
+    image: "https://fmcghouse.com/cdn/shop/files/Untitled_f200b3c4-4efb-4118-9119-6fde0e2166d6.png?v=1754395682&width=900",
+  },
+  {
+    id: "blue-washing-soap",
+    name: "Surf Excel Detergent Bar 150 g",
+    category: "washing-soap",
+    price: 45,
+    description: "Surf Excel detergent bar for collars, cuffs, socks, and hand-wash stains.",
+    tags: ["Laundry bar", "Stain rub"],
+    image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTBAR150G.webp?v=1746441457&width=900",
+  },
+  {
+    id: "white-washing-soap-pack",
+    name: "Surf Excel Detergent Bar Pack of 4",
+    category: "washing-soap",
+    price: 169,
+    description: "Multipack Surf Excel bars for daily laundry and household cloth cleaning.",
+    tags: ["Pack of 4", "Home care"],
+    image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTBAR4X200G.jpg?v=1746440092&width=900",
+  },
+  {
+    id: "monthly-home-combo",
+    name: "Surf Excel Monthly Combo",
+    category: "combos",
+    price: 799,
+    description: "Surf Excel powder and detergent bars in one useful monthly laundry pack.",
+    tags: ["Best seller", "Monthly pack"],
+    image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTPOWDER1KKG.webp?v=1746444719&width=900",
+  },
+  {
+    id: "laundry-combo",
+    name: "Surf Excel Laundry Combo",
+    category: "combos",
+    price: 399,
+    description: "Surf Excel powder and detergent bar bundle for regular clothes and stain care.",
+    tags: ["Laundry", "Combo"],
+    image: "https://fmcghouse.com/cdn/shop/files/SURFEXCELDETERGENTBAR4X200G.jpg?v=1746440092&width=900",
   },
 ];
 
-const SUPABASE_URL = "https://pixcrvwtjsnktlztqswz.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_NcLQynCVLY-fMEgTj9lMnA_G66g_NQd";
+const SUPABASE_URL = "https://olhfskublgjvugmeqarc.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_R5r4TEKgibvhXi3DvJ7TJA_tpyyIz5L";
 const supabaseClient = window.supabase
   ? window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY)
   : null;
@@ -126,7 +81,7 @@ const state = {
   cart: new Map(),
 };
 
-const menuGrid = document.querySelector("[data-menu-grid]");
+const productGrid = document.querySelector("[data-product-grid]");
 const cartDrawer = document.querySelector("[data-cart-drawer]");
 const cartItems = document.querySelector("[data-cart-items]");
 const cartEmpty = document.querySelector("[data-cart-empty]");
@@ -137,25 +92,25 @@ const scrim = document.querySelector("[data-scrim]");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector("[data-nav-links]");
 
-function renderMenu() {
-  const visibleItems = state.filter === "all"
-    ? menuItems
-    : menuItems.filter((item) => item.category === state.filter);
+function renderProducts() {
+  const visibleProducts = state.filter === "all"
+    ? products
+    : products.filter((product) => product.category === state.filter);
 
-  menuGrid.innerHTML = visibleItems
-    .map((item) => `
-      <article class="menu-card">
-        <img src="${item.image}" alt="${item.name}" loading="lazy" />
-        <div class="menu-card-body">
-          <div class="menu-card-top">
-            <h3>${item.name}</h3>
-            <span class="price">${formatter.format(item.price)}</span>
+  productGrid.innerHTML = visibleProducts
+    .map((product) => `
+      <article class="product-card">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" />
+        <div class="product-card-body">
+          <div class="product-card-top">
+            <h3>${product.name}</h3>
+            <span class="price">${formatter.format(product.price)}</span>
           </div>
-          <p>${item.description}</p>
+          <p>${product.description}</p>
           <div class="tag-row">
-            ${item.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+            ${product.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
           </div>
-          <button class="add-btn" type="button" data-add-item="${item.id}">Add item</button>
+          <button class="add-btn" type="button" data-add-product="${product.id}">Add product</button>
         </div>
       </article>
     `)
@@ -169,34 +124,36 @@ function cartEntries() {
 function renderCart() {
   const entries = cartEntries();
   const itemCount = entries.reduce((sum, entry) => sum + entry.quantity, 0);
-  const total = entries.reduce((sum, entry) => sum + entry.item.price * entry.quantity, 0);
+  const total = entries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
 
   cartCount.textContent = itemCount;
   cartTotal.textContent = formatter.format(total);
   cartEmpty.classList.toggle("visible", entries.length === 0);
 
   cartItems.innerHTML = entries
-    .map(({ item, quantity }) => `
+    .map(({ product, quantity }) => `
       <article class="cart-item">
         <div>
-          <h3>${item.name}</h3>
-          <p>${formatter.format(item.price)} x ${quantity}</p>
+          <h3>${product.name}</h3>
+          <p>${formatter.format(product.price)} x ${quantity}</p>
         </div>
-        <div class="qty-controls" aria-label="Quantity controls for ${item.name}">
-          <button type="button" data-decrease="${item.id}" aria-label="Decrease ${item.name}">-</button>
+        <div class="qty-controls" aria-label="Quantity controls for ${product.name}">
+          <button type="button" data-decrease="${product.id}" aria-label="Decrease ${product.name}">-</button>
           <strong>${quantity}</strong>
-          <button type="button" data-increase="${item.id}" aria-label="Increase ${item.name}">+</button>
+          <button type="button" data-increase="${product.id}" aria-label="Increase ${product.name}">+</button>
         </div>
       </article>
     `)
     .join("");
 }
 
-function addItem(id) {
-  const item = menuItems.find((menuItem) => menuItem.id === id);
+function addProduct(id) {
+  const product = products.find((entry) => entry.id === id);
+  if (!product) return;
+
   const existing = state.cart.get(id);
   state.cart.set(id, {
-    item,
+    product,
     quantity: existing ? existing.quantity + 1 : 1,
   });
   orderStatus.textContent = "";
@@ -234,13 +191,13 @@ function closeCart() {
 }
 
 document.addEventListener("click", (event) => {
-  const addButton = event.target.closest("[data-add-item]");
+  const addButton = event.target.closest("[data-add-product]");
   const increaseButton = event.target.closest("[data-increase]");
   const decreaseButton = event.target.closest("[data-decrease]");
   const filterButton = event.target.closest("[data-filter]");
 
   if (addButton) {
-    addItem(addButton.dataset.addItem);
+    addProduct(addButton.dataset.addProduct);
   }
 
   if (increaseButton) {
@@ -256,7 +213,7 @@ document.addEventListener("click", (event) => {
     document.querySelectorAll("[data-filter]").forEach((button) => {
       button.classList.toggle("active", button === filterButton);
     });
-    renderMenu();
+    renderProducts();
   }
 });
 
@@ -264,16 +221,14 @@ document.querySelector("[data-open-cart]").addEventListener("click", openCart);
 document.querySelector("[data-close-cart]").addEventListener("click", closeCart);
 scrim.addEventListener("click", closeCart);
 
-document.querySelector("[data-checkout]").addEventListener("click", () => {
+document.querySelector("[data-checkout]").addEventListener("click", (event) => {
   if (!state.cart.size) {
-    orderStatus.textContent = "Add at least one item to place an order request.";
+    event.preventDefault();
+    orderStatus.textContent = "Add at least one product before sending an enquiry.";
     return;
   }
 
-  const summary = cartEntries()
-    .map(({ item, quantity }) => `${quantity} x ${item.name}`)
-    .join(", ");
-  orderStatus.textContent = `Order request ready: ${summary}. Our team will confirm availability and delivery.`;
+  closeCart();
 });
 
 document.querySelector(".contact-form").addEventListener("submit", async (event) => {
@@ -282,21 +237,30 @@ document.querySelector(".contact-form").addEventListener("submit", async (event)
   const submitButton = form.querySelector("button[type='submit']");
   const formData = new FormData(form);
   const entries = cartEntries();
-  const totalAmount = entries.reduce((sum, entry) => sum + entry.item.price * entry.quantity, 0);
+
+  if (!entries.length) {
+    alert("Please add at least one surf or soap product before sending your order enquiry.");
+    return;
+  }
+
+  const totalAmount = entries.reduce((sum, entry) => sum + entry.product.price * entry.quantity, 0);
   const payload = {
     name: formData.get("name"),
     email: formData.get("email"),
+    phone: formData.get("phone"),
     city: formData.get("city"),
+    address: formData.get("address"),
     requirement: formData.get("message"),
-    cart_items: entries.map(({ item, quantity }) => ({
-      id: item.id,
-      name: item.name,
-      price: item.price,
+    order_items: entries.map(({ product, quantity }) => ({
+      id: product.id,
+      name: product.name,
+      category: product.category,
+      price: product.price,
       quantity,
-      subtotal: item.price * quantity,
+      subtotal: product.price * quantity,
     })),
     total_amount: totalAmount,
-    source: "rasoiworks-website",
+    source: "surf-soap-india-website",
   };
 
   submitButton.disabled = true;
@@ -304,11 +268,11 @@ document.querySelector(".contact-form").addEventListener("submit", async (event)
 
   try {
     if (!supabaseClient) {
-      throw new Error("Supabase project URL and anon key are not configured.");
+      throw new Error("Supabase client is not configured.");
     }
 
     const { error } = await supabaseClient
-      .from("business_enquiries")
+      .from("customer_orders")
       .insert(payload);
 
     if (error) {
@@ -318,12 +282,16 @@ document.querySelector(".contact-form").addEventListener("submit", async (event)
     form.reset();
     state.cart.clear();
     renderCart();
-    alert("Thank you. Your enquiry has been saved and RasoiWorks will contact you soon.");
+    alert("Thank you. Your surf and soap order enquiry has been saved. We will contact you soon.");
   } catch (error) {
-    alert(`Unable to save enquiry: ${error.message}`);
+    if (error.code === "PGRST205") {
+      alert("Supabase table customer_orders is missing. Please run supabase/schema.sql in your Supabase SQL Editor.");
+    } else {
+      alert(`Unable to save order enquiry: ${error.message}`);
+    }
   } finally {
     submitButton.disabled = false;
-    submitButton.textContent = "Send enquiry";
+    submitButton.textContent = "Send order enquiry";
   }
 });
 
@@ -339,5 +307,5 @@ navLinks.addEventListener("click", (event) => {
   }
 });
 
-renderMenu();
+renderProducts();
 renderCart();

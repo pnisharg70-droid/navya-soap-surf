@@ -24,7 +24,7 @@ const menuItems = [
     price: 289,
     description: "Aromatic basmati rice layered with spices, herbs, raita, and salan.",
     tags: ["Veg or Chicken", "Bulk order"],
-    image: "https://images.unsplash.com/photo-1563379091339-03246963d4f6?auto=format&fit=crop&w=900&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Hyderabadi_Chicken_Biryani.jpg/800px-Hyderabadi_Chicken_Biryani.jpg",
   },
   {
     id: "paneer-tikka",

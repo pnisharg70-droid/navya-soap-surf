@@ -26,9 +26,14 @@ const state = {
 };
 
 const loginPanel = document.querySelector("[data-login-panel]");
+const resetPanel = document.querySelector("[data-reset-panel]");
 const dashboard = document.querySelector("[data-dashboard]");
 const authForm = document.querySelector("[data-auth-form]");
+const passwordForm = document.querySelector("[data-password-form]");
+const dashboardPasswordForm = document.querySelector("[data-dashboard-password-form]");
 const authStatus = document.querySelector("[data-auth-status]");
+const passwordStatus = document.querySelector("[data-password-status]");
+const dashboardPasswordStatus = document.querySelector("[data-dashboard-password-status]");
 const orderStatus = document.querySelector("[data-order-status]");
 const ordersList = document.querySelector("[data-orders-list]");
 const orderStats = document.querySelector("[data-order-stats]");
@@ -232,6 +237,7 @@ async function loadOrders() {
 
 async function showDashboard() {
   loginPanel.classList.add("hidden");
+  resetPanel.classList.add("hidden");
   dashboard.classList.remove("hidden");
   signOutButton.classList.remove("hidden");
   await loadOrders();
@@ -239,12 +245,27 @@ async function showDashboard() {
 
 function showLogin(message = "") {
   dashboard.classList.add("hidden");
+  resetPanel.classList.add("hidden");
   signOutButton.classList.add("hidden");
   loginPanel.classList.remove("hidden");
   authStatus.textContent = message;
 }
 
+function showPasswordReset(message = "") {
+  loginPanel.classList.add("hidden");
+  dashboard.classList.add("hidden");
+  signOutButton.classList.add("hidden");
+  resetPanel.classList.remove("hidden");
+  passwordStatus.textContent = message;
+}
+
 async function checkSession() {
+  const params = new URLSearchParams(window.location.hash.slice(1));
+  if (params.get("type") === "recovery") {
+    showPasswordReset("Enter your new password.");
+    return;
+  }
+
   const { data } = await supabaseClient.auth.getSession();
   const email = data.session?.user?.email;
 
@@ -301,6 +322,70 @@ document.querySelector("[data-auth-action='signup']").addEventListener("click", 
   authStatus.textContent = error
     ? error.message
     : "Admin account created. Confirm the email if Supabase asks, then sign in.";
+});
+
+document.querySelector("[data-auth-action='reset']").addEventListener("click", async () => {
+  const formData = new FormData(authForm);
+  const email = String(formData.get("email") || ADMIN_EMAIL).trim().toLowerCase();
+
+  if (email !== ADMIN_EMAIL) {
+    authStatus.textContent = `Use the approved admin email: ${ADMIN_EMAIL}`;
+    return;
+  }
+
+  authStatus.textContent = "Sending password reset email...";
+  const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+    redirectTo: `${window.location.origin}${window.location.pathname}`,
+  });
+
+  authStatus.textContent = error
+    ? error.message
+    : "Password reset email sent. Open the link, then set a new password.";
+});
+
+passwordForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formData = new FormData(passwordForm);
+  const password = String(formData.get("password") || "");
+
+  if (password.length < 6) {
+    passwordStatus.textContent = "Password must be at least 6 characters.";
+    return;
+  }
+
+  passwordStatus.textContent = "Updating password...";
+  const { error } = await supabaseClient.auth.updateUser({ password });
+
+  if (error) {
+    passwordStatus.textContent = error.message;
+    return;
+  }
+
+  window.history.replaceState({}, document.title, window.location.pathname);
+  passwordForm.reset();
+  await showDashboard();
+});
+
+dashboardPasswordForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formData = new FormData(dashboardPasswordForm);
+  const password = String(formData.get("password") || "");
+
+  if (password.length < 6) {
+    dashboardPasswordStatus.textContent = "Password must be at least 6 characters.";
+    return;
+  }
+
+  dashboardPasswordStatus.textContent = "Updating password...";
+  const { error } = await supabaseClient.auth.updateUser({ password });
+
+  if (error) {
+    dashboardPasswordStatus.textContent = error.message;
+    return;
+  }
+
+  dashboardPasswordForm.reset();
+  dashboardPasswordStatus.textContent = "Password updated.";
 });
 
 signOutButton.addEventListener("click", async () => {

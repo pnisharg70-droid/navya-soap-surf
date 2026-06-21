@@ -52,7 +52,25 @@
             <button class="btn primary" type="submit" data-auth-action="signin">Sign in</button>
             <button class="btn ghost" type="button" data-auth-action="signup">Create admin account</button>
           </div>
+          <button class="text-button" type="button" data-auth-action="reset">Send password reset email</button>
           <p class="admin-status" data-auth-status role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-login hidden" data-reset-panel>
+        <div>
+          <p class="eyebrow">Password reset</p>
+          <h1>Set a new admin password.</h1>
+          <p>Enter a new password after opening the reset link from your email.</p>
+        </div>
+
+        <form class="admin-auth-card" data-password-form>
+          <label>
+            New password
+            <input type="password" name="password" placeholder="Minimum 6 characters" required />
+          </label>
+          <button class="btn primary" type="submit">Update password</button>
+          <p class="admin-status" data-password-status role="status"></p>
         </form>
       </section>
 
@@ -64,6 +82,15 @@
           </div>
           <button class="btn ghost" type="button" data-refresh-orders>Refresh</button>
         </div>
+
+        <form class="admin-password-card" data-dashboard-password-form>
+          <label>
+            Change password
+            <input type="password" name="password" placeholder="New password" required />
+          </label>
+          <button class="btn ghost" type="submit">Update password</button>
+          <p class="admin-status" data-dashboard-password-status role="status"></p>
+        </form>
 
         <div class="admin-stats" data-order-stats></div>
 
